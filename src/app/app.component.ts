@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet><router-outlet>',
+  // Chamada do ngOnChanges, caso contrário, nada acontece
+  template: `
+  <app-title title="Hello World"></app-title>
+  <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
   // styleUrls: ['./app.component.scss']

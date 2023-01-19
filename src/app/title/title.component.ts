@@ -1,18 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
-export class TitleComponent {
+export class TitleComponent implements OnInit, OnChanges {
 
-  public title: string = "Hello world";
+  // @Input - uma fn recebendo um obj -entrada de valor no componente
+  @Input() public title: string = "Hello world";
 
   constructor() {}
 
   ngOnInit(): void {
 
+  }
+
+  // Cilo de vida 2  - só é invocado com entrada de dado, ou seja, alteração do componente
+  ngOnChanges(): void {
+    console.log("Foi alterado com sucesso")
+    // alert("Foi alterado com sucesso")
   }
 
 }
