@@ -12,6 +12,7 @@ export class AppComponent implements OnInit{
 
   constructor() {}
 
+  // Ciclo de vida 1 - acionado assim que o componente for inicializado.
   ngOnInit(): void {
     setTimeout(() =>  {
       console.log(1)
