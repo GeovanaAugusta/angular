@@ -4,11 +4,13 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   selector: 'app-root',
   // Chamada do ngOnChanges, caso contrário, nada acontece
   template: `
-  <app-title *ngIf="destroy"></app-title>
+  <app-title title="Item a destruir" *ngIf="destroy"></app-title>
   <app-title title="Hello World"></app-title>
   {{valor}}
+
   <button (click)="adicionar()">Adicionar</button>
   <button (click)="destruir()">Destruir componente</button>
+  <app-data-binding></app-data-binding>
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
