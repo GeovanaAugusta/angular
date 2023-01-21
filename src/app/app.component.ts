@@ -11,6 +11,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   <button (click)="adicionar()">Adicionar</button>
   <button (click)="destruir()">Destruir componente</button>
   <app-data-binding></app-data-binding>
+  <app-diretivas-estruturais></app-diretivas-estruturais>
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
