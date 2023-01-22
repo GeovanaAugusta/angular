@@ -12,7 +12,10 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   <button (click)="destruir()">Destruir componente</button>
   <app-data-binding></app-data-binding> -->
   <!-- <app-diretivas-estruturais></app-diretivas-estruturais> -->
-  <app-diretivas-atributos></app-diretivas-atributos>
+  <app-diretivas-atributos>
+    <h1>Aulas de Diretivas Atributos</h1>
+    <h3>Final da aula</h3>
+  </app-diretivas-atributos>
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
