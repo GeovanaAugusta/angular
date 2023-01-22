@@ -20,6 +20,12 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
  <!-- <app-pipes></app-pipes> -->
 
 <app-new-component></app-new-component>
+<app-input [contador]="addValue">
+</app-input>
+<br>
+<button (click)="add()">Add</button>
+<!-- Atributo para já inicializar uma variável -->
+
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
@@ -30,6 +36,7 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
   public valor: number = 1
   public title = "Bem vindo!"
   public destroy: boolean = true;
+  public addValue: number = 0;
 
   constructor() {}
 
@@ -39,6 +46,11 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
 
   public destruir() {
     this.destroy = false;
+  }
+
+  public add() {
+    this.addValue += 1;
+
   }
 
   // Ciclo de vida 1 - acionado assim que o componente for inicializado.
