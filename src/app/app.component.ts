@@ -17,8 +17,9 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
     <h3>Final da aula</h3>
   </app-diretivas-atributos> -->
 
- <app-pipes></app-pipes>
+ <!-- <app-pipes></app-pipes> -->
 
+<app-new-component></app-new-component>
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
