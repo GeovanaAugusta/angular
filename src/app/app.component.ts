@@ -26,6 +26,16 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 <button (click)="add()">Add</button>
 <!-- Atributo para já inicializar uma variável -->
 
+<br>
+<br>
+<hr>
+
+<ng-template [ngIf]="getDados">
+  <h1>{{getDados.nome}}</h1>
+  <h2>{{getDados.idade}}</h2>
+</ng-template>
+<!-- Evento de emitir -->
+<app-output (enviarDados)="setDados($event)"></app-output>
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
@@ -37,6 +47,7 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
   public title = "Bem vindo!"
   public destroy: boolean = true;
   public addValue: number = 0;
+  public getDados: {nome: string, idade: number} | undefined;
 
   constructor() {}
 
@@ -50,13 +61,16 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
 
   public add() {
     this.addValue += 1;
+  }
 
+  public setDados(dados: {nome: string, idade: number}) {
+    this.getDados = dados;
   }
 
   // Ciclo de vida 1 - acionado assim que o componente for inicializado.
   ngOnInit(): void {
     setTimeout(() =>  {
-      console.log(1)
+      // console.log(1)
     }, 5000)
   }
 
