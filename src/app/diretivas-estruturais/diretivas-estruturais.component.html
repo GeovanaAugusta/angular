@@ -25,3 +25,18 @@
 </ul>
 
 <button (click)="onClickAddlist()">Add</button>
+
+<br>
+<br>
+<hr>
+
+<input type="text" [(ngModel)]="nome">
+
+<div [ngSwitch]="nome">
+  <p *ngSwitchCase="'Nome'">Nome</p>
+
+  <p *ngSwitchCase="'nay'">Nay</p>
+
+  <p *ngSwitchDefault>A busca não foi bem sucedida</p>
+</div>
+

@@ -16,6 +16,8 @@ export class DiretivasEstruturaisComponent implements OnInit{
     { nome: "PessoaZ", idade: 21}
   ]
 
+  public nome: string = "Nome"
+
   constructor() {}
 
   ngOnInit(): void {
@@ -48,4 +50,5 @@ export class DiretivasEstruturaisComponent implements OnInit{
   public onClickEventRemove(i: number) {
     this.list.splice(i, 1)
   }
+
 }
