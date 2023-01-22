@@ -1,0 +1,8 @@
+<h1>Pipes</h1>
+<input [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+
+<li *ngFor="let item of list">{{ item.nome | uppercase }}</li>
+
+<p>{{ date | date: 'dd/MM/YYYY' }}</p>
+

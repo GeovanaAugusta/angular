@@ -1,0 +1,37 @@
+<ng-content select="h1"></ng-content>
+
+<div *ngIf="nome != 'Geovana'">
+
+<p [ngClass]="{'active': valor, 'disabled': !valor}">ngClass</p>
+<!-- Validações + estilização-->
+<p [ngStyle]="{'height': heightPx, 'background': backgroundColor}">ngStyle</p>
+<!-- Estilizações gerais -->
+</div>
+
+<!-- <br>
+<hr>
+
+<input [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+
+<li *ngFor="let item of list">{{ item.nome }}</li> -->
+
+<br>
+<hr>
+
+<!-- Template do que pode ou não aparecer -->
+<ng-template ngFor let-item [ngForOf]="list">
+  <li>
+    {{ item.nome }}
+  </li>
+</ng-template>
+
+<input [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+
+<br>
+
+<ng-content select="h3"></ng-content>
+
+
+

@@ -4,13 +4,21 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   selector: 'app-root',
   // Chamada do ngOnChanges, caso contrário, nada acontece
   template: `
-  <app-title title="Item a destruir" *ngIf="destroy"></app-title>
+  <!-- <app-title title="Item a destruir" *ngIf="destroy"></app-title>
   <app-title title="Hello World"></app-title>
   {{valor}}
 
   <button (click)="adicionar()">Adicionar</button>
   <button (click)="destruir()">Destruir componente</button>
-  <app-data-binding></app-data-binding>
+  <app-data-binding></app-data-binding> -->
+  <!-- <app-diretivas-estruturais></app-diretivas-estruturais> -->
+  <!-- <app-diretivas-atributos>
+    <h1>Aulas de Diretivas Atributos</h1>
+    <h3>Final da aula</h3>
+  </app-diretivas-atributos> -->
+
+ <app-pipes></app-pipes>
+
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
@@ -41,27 +49,27 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
 
   // Ciclo de vida 3 - executado a cada mudança - controle de entrada
   ngDoCheck(): void {
-    console.log("ngDoCheck")
+    // console.log("ngDoCheck")
   }
 
   // Ciclo de vida 4 - executado sempre que um conteúdo vindo de uma fonte externa do componente é inserido
   ngAfterContentInit(): void {
-    console.log("ngAfterContentInit")
+    // console.log("ngAfterContentInit")
   }
 
   // Ciclo de vida 5 - executado quando o conteúdo externo é verificado
   ngAfterContentChecked(): void {
-    console.log("ngAfterContentChecked")
+    // console.log("ngAfterContentChecked")
   }
 
 // Ciclo de vida 6 - executado logo após os dados dos filhos e do próprio componente ser inicializado
 ngAfterViewInit(): void {
-  console.log("ngAfterViewInit")
+  // console.log("ngAfterViewInit")
  }
 
 // Ciclo de vida 7 - executado sempre que é detectado uma alteração do conteúdo é chamado esse cara.
 ngAfterViewChecked(): void {
-  console.log("ngAfterViewChecked")
+  // console.log("ngAfterViewChecked")
  }
 
 }
