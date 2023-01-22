@@ -1,3 +1,14 @@
+<div *ngIf="nome != 'Geovana'">
+
 <p [ngClass]="{'active': valor, 'disabled': !valor}">ngClass</p>
-<!-- Validações -->
+<!-- Validações + estilização-->
 <p [ngStyle]="{'height': heightPx, 'background': backgroundColor}">ngStyle</p>
+<!-- Estilizações gerais -->
+</div>
+
+<hr>
+
+<input [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+
+<li *ngFor="let item of list">{{ item.nome }}</li>
