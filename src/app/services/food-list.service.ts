@@ -50,7 +50,21 @@ export class FoodListService {
     );
   }
 
-  // Substituído para a renderização acontecer ao adicionar um novo alimento
+  public foodListEdit(food: string, id: number): Observable<FoodListI> {
+    return this.http.put<FoodListI>(`${this.url}/list-food/${id}`, { nome: food}).pipe(
+      next => next,
+      error => error,
+    );
+  }
+
+  public foodListDelete(id: number): Observable<FoodListI> {
+    return this.http.delete<FoodListI>(`${this.url}/list-food/${id}`).pipe(
+      next => next,
+      error => error,
+    );
+  }
+
+  // Substituído para a re-renderização (reatividade no caso) acontecer ao adicionar um novo alimento
   // public foodListAlert(food: string) {
   //   return this.emitEvent.emit(food);
   // }

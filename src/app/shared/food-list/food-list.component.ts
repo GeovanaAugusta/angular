@@ -39,7 +39,31 @@ export class FoodListComponent implements OnInit {
     );
   }
 
+  public foodListDelete(id: number) {
+    this.foodListService.foodListDelete(id).subscribe(
+      // Filtragem para a re-renderização (reatividade no caso) acontecer ao deletar um alimento
+      next => {
+        this.foodList = this.foodList.filter((item: any) => {
+          return id !== item.id
+      }
+    )
+  },
+      error => error
+    );
+  }
+
+  public foodListEdit(food: string, id: number) {
+    return this.foodListService.foodListEdit(food, id).subscribe(
+      next => {
+        return console.log(next);
+
+      },
+      error => error,
+    )
+  }
 }
+
+
 
 // ANTES
 // .subscribe({
