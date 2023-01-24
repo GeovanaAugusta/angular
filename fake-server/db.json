@@ -1,0 +1,7 @@
+{
+  "list-food": [
+    { "id": 1, "nome": "Torta" },
+    { "id": 2, "nome": "Bolo" },
+    { "id": 3, "nome": "Sanduíche" }
+  ]
+}

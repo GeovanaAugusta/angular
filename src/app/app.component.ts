@@ -19,23 +19,29 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 
  <!-- <app-pipes></app-pipes> -->
 
-<app-new-component></app-new-component>
+<!-- <app-new-component></app-new-component>
 <app-input [contador]="addValue">
 </app-input>
 <br>
-<button (click)="add()">Add</button>
+<button (click)="add()">Add</button> -->
 <!-- Atributo para já inicializar uma variável -->
 
+<!-- <br>
 <br>
-<br>
-<hr>
+<hr> -->
 
-<ng-template [ngIf]="getDados">
+<!-- <ng-template [ngIf]="getDados">
   <h1>{{getDados.nome}}</h1>
   <h2>{{getDados.idade}}</h2>
-</ng-template>
+</ng-template> -->
 <!-- Evento de emitir -->
-<app-output (enviarDados)="setDados($event)"></app-output>
+<!-- <app-output (enviarDados)="setDados($event)"></app-output> -->
+<app-food-add></app-food-add>
+
+<br>
+
+<app-food-list></app-food-list>
+
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
