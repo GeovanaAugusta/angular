@@ -18,7 +18,7 @@ export class FoodAddComponent implements OnInit {
   }
 
   public listAddItem(food: string) {
-    console.log(food);
+    // console.log(food);
     return this.foodListService.foodListAdd(food);
   }
 

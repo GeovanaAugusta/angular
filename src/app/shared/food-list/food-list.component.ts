@@ -19,6 +19,23 @@ export class FoodListComponent implements OnInit {
     // Em outras linhas, a injeção seria:
     // let list = new FoodListService();
     // this.foodList = list.foodList()
+
+    // Sempre que um evento for emitido, trará uma resposta
+    this.foodListService.emitEvent.subscribe(
+      next => alert(`Item adicionado com sucesso => ${next}`)
+    );
   }
 
 }
+
+// ANTES
+// .subscribe({
+//   (res) => console.log(res),
+//   (err) => console.log(err),
+// });
+
+// DEPOIS
+// .subscribe({
+//   next: (res) => console.log(res),
+//   error: (err) => console.log(err),
+// });
