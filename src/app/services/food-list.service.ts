@@ -23,26 +23,40 @@ export class FoodListService {
 
   constructor(private http: HttpClient) { }
 
+  // Substituído pelo método http - get
   // public foodList() {
   //   return this.list;
   // }
 
   // Usar os módulos do Angular pra possibilitar o uso do HTTP do mesmo.
-    public foodList(): Observable<FoodListI> {
-    return this.http.get<FoodListI>(`${this.url}/list-food`).pipe(
+  // Sempre que se cria um Observable é necessário se inscrever usando o subscribe onde a função é chamada, no componente em questão
+    public foodList(): Observable<Array<FoodListI>> {
+    return this.http.get<Array<FoodListI>>(`${this.url}/list-food`).pipe(
       next => next,
       error => error,
     );
   }
 
-  public foodListAdd(food: string) {
-    this.foodListAlert(food)
-    return this.list.push(food);
+  // Substituído pelo método http - post
+  // public foodListAdd(food: string) {
+  //   this.foodListAlert(food)
+  //   return this.list.push(food);
+  // }
+
+  public foodListAdd(food: string): Observable<FoodListI> {
+    return this.http.post<FoodListI>(`${this.url}/list-food`, { nome: food}).pipe(
+      next => next,
+      error => error,
+    );
   }
 
-  public foodListAlert(food: string) {
+  // Substituído para a renderização acontecer ao adicionar um novo alimento
+  // public foodListAlert(food: string) {
+  //   return this.emitEvent.emit(food);
+  // }
+
+  public foodListAlert(food: FoodListI) {
     return this.emitEvent.emit(food);
   }
-
 
 }

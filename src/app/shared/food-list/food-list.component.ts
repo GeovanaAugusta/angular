@@ -11,7 +11,7 @@ import { FoodListService } from 'src/app/services/food-list.service';
 })
 export class FoodListComponent implements OnInit {
 
-  public foodList: FoodListI | any;
+  public foodList: Array<FoodListI> = []
 
   constructor(private foodListService: FoodListService) {}
 
@@ -30,8 +30,12 @@ export class FoodListComponent implements OnInit {
     // error:(e) => e
 
     // Sempre que um evento for emitido, trará uma resposta
+    // Ao adicionar um item, subscrever e pós a validação de ter dado certo, será emitido o valor do alert.
     this.foodListService.emitEvent.subscribe(
-      next => alert(`Item adicionado com sucesso => ${next}`)
+      next => {
+        alert(`Item adicionado com sucesso => ${next.nome}`);
+        return this.foodList.push(next);
+      }
     );
   }
 
