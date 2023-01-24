@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
+// Module Interface
 import { FoodListI } from '../module/food-list';
 
 // Toda aplicação passa a ter acesso ao mesmo
@@ -18,6 +20,13 @@ export class FoodListService {
     "Bolo",
     "Sanduíche"
   ];
+
+  // Custom header
+  private httpOptions ={
+    headers: new HttpHeaders({
+      'Content-type': 'application/json',
+    })
+  }
 
   private url: string =  "http://localhost:3000"; // list-food
 
@@ -43,8 +52,9 @@ export class FoodListService {
   //   return this.list.push(food);
   // }
 
+  // E para usar o header customizado, basta passar como 3 argumento no post
   public foodListAdd(food: string): Observable<FoodListI> {
-    return this.http.post<FoodListI>(`${this.url}/list-food`, { nome: food}).pipe(
+    return this.http.post<FoodListI>(`${this.url}/list-food`, { nome: food}, this.httpOptions).pipe(
       next => next,
       error => error,
     );
