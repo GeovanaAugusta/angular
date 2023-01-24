@@ -36,8 +36,12 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 </ng-template> -->
 <!-- Evento de emitir -->
 <!-- <app-output (enviarDados)="setDados($event)"></app-output> -->
+<app-food-add></app-food-add>
+
+<br>
 
 <app-food-list></app-food-list>
+
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',

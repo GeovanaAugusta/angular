@@ -16,6 +16,9 @@ export class FoodListComponent implements OnInit {
 
   ngOnInit(): void {
     this.foodList = this.foodListService.foodList();
+    // Em outras linhas, a injeção seria:
+    // let list = new FoodListService();
+    // this.foodList = list.foodList()
   }
 
 }

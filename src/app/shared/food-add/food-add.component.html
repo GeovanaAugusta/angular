@@ -1,0 +1,3 @@
+<!-- Denominação, análogo ao value do input no react, referencia com um nome qualquer e dessa forma consegue acessar as propriedades do mesmo-->
+<input #inputValue>
+<button (click)="listAddItem(inputValue.value); inputValue.value = ''">Adicionar</button>
