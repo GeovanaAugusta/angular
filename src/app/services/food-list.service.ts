@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FoodListI } from '../module/food-list';
 
 // Toda aplicação passa a ter acesso ao mesmo
 @Injectable({
@@ -16,10 +19,20 @@ export class FoodListService {
     "Sanduíche"
   ];
 
-  constructor() { }
+  private url: string =  "http://localhost:3000"; // list-food
 
-  public foodList() {
-    return this.list;
+  constructor(private http: HttpClient) { }
+
+  // public foodList() {
+  //   return this.list;
+  // }
+
+  // Usar os módulos do Angular pra possibilitar o uso do HTTP do mesmo.
+    public foodList(): Observable<FoodListI> {
+    return this.http.get<FoodListI>(`${this.url}/list-food`).pipe(
+      next => next,
+      error => error,
+    );
   }
 
   public foodListAdd(food: string) {
