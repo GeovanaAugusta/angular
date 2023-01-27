@@ -1,0 +1,10 @@
+<!-- Template form -->
+<form #form="ngForm">
+  <label>Nome:</label>
+  <input type="text" name="nome" ngModel>
+  <br>
+  <br>
+</form>
+
+<!-- Seriliaza os valores do forms -->
+{{ form.value | json }}
