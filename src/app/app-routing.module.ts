@@ -17,8 +17,10 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
-{ path: 'sobre', component: SobreComponent, pathMatch: 'full' },
-{ path: '404', component: NotFoundComponent, pathMatch: 'full' },
+{ path: 'sobre', component: SobreComponent },
+{ path: '404', component: NotFoundComponent },
+// Para não quebrar quando entra numa rota inexistente, redirecionando assim para a 404 que renderiza meu componente de not fount
+{ path: '**', redirectTo: '404' },
 ];
 
 @NgModule({
