@@ -1,5 +1,5 @@
 <!-- Template form -->
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
   <label>Nome:
     <!-- Referencia para posteriormente ser passível de validação -->
   <input type="text" name="nome" #nome="ngModel" [ngModel]="nome.value" required>
@@ -71,6 +71,8 @@
 
   <br>
   <br>
+
+  <button [disabled]="form.invalid">Enviar Dados</button>
 </form>
 
 <!-- Seriliaza os valores do forms -->
