@@ -1,15 +1,18 @@
+<!-- [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" -->
+<!-- Quando a rota estiver ativa, coloca uma classe e a options direciona a rota exata requerida-->
+
 <header>
   <nav>
     <li>
       <!-- href daria para usar mas a performance é muito pior, lenta pelo reload -->
       <!-- Usar a rota entre [rota, e algum outro valor que vai compor a rota], ex: ['/sobre', '/detalhes'] = sobre/detalhes -->
-      <a routerLink="['/']">
+      <a routerLink="/" [routerLinkActive]="['active']">
         Home
       </a>
-      <a routerLink="['/sobre']">
+      <a routerLink="sobre" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         Sobre
       </a>
-      <a routerLink="['/404']">
+      <a routerLink="['/404']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         Error
       </a>
     </li>
