@@ -1,9 +1,14 @@
 <form #form="ngForm" [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
 
-  <label for="first-name">First Name: </label>
+  <label for="first-name">First Name:
   <input type="text" formControlName="firstName">
+</label>
 
-  {{ cadastroForm.get('firstName')?.value }}
+<span class="alert" *ngIf="cadastroForm.get('firstName')?.errors && cadastroForm.get('firstName')?.touched || cadastroForm.get('firstName')?.dirty">
+  Favor adicionar um nome
+</span>
+
+  <!-- {{ cadastroForm.get('firstName')?.value }} -->
 
 <br>
 <br>
@@ -14,6 +19,11 @@
   <br>
   <br>
 
-  <button [disabled]="form.invalid" >Submeter dados</button>
+  <p>
+    {{ cadastroForm.get('firstName')?.errors | json }}
+  </p>
+
+  <!-- Validação - [disabled]="form.invalid" -->
+  <button [disabled]="cadastroForm.get('firstName')?.errors" >Submeter dados</button>
 
 </form>
