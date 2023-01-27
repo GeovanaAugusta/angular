@@ -1,8 +1,20 @@
 <!-- Template form -->
 <form #form="ngForm">
   <label>Nome:
-  <input type="text" name="nome" ngModel>
+    <!-- Referencia para posteriormente ser passível de validação -->
+  <input type="text" name="nome" #nome="ngModel" [ngModel]="nome.value" required>
+  <!-- !nome.valid ou nome.invalid -->
+  <span *ngIf="!nome.valid && (nome.dirty && nome.touched)">
+    Invalid
+  </span>
 </label>
+
+<br>
+<br>
+
+{{ nome.valid }}
+{{ nome.dirty }}
+{{ nome.touched }}
 
 <br>
 <br>
