@@ -14,7 +14,7 @@
 <br>
 
   <label for="last-name">Last Name: </label>
-  <input type="text" formControlName="lastName">
+  <input type="text" formControlName="lastName" required>
 
   <br>
   <br>
@@ -23,7 +23,7 @@
     {{ cadastroForm.get('firstName')?.errors | json }}
   </p>
 
-  <!-- Validação - [disabled]="form.invalid" -->
-  <button [disabled]="cadastroForm.get('firstName')?.errors" >Submeter dados</button>
+  <!-- Validação individual - [disabled]="cadastroForm.get('firstName')?.errors"  -->
+  <button [disabled]="form.invalid">Submeter dados</button>
 
 </form>

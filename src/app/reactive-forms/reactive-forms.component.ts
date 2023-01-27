@@ -21,9 +21,11 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   public submitForm() {
-    console.log(this.cadastroForm);
-    console.log(this.cadastroForm.value);
-    this.cadastroForm.reset();
+    if (this.cadastroForm.valid) {
+      console.log(this.cadastroForm);
+      console.log(this.cadastroForm.value);
+      this.cadastroForm.reset();
+    }
   }
 
 }
