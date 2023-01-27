@@ -1,0 +1,19 @@
+<form #form="ngForm" [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+
+  <label for="first-name">First Name: </label>
+  <input type="text" formControlName="firstName">
+
+  {{ cadastroForm.get('firstName')?.value }}
+
+<br>
+<br>
+
+  <label for="last-name">Last Name: </label>
+  <input type="text" formControlName="lastName">
+
+  <br>
+  <br>
+
+  <button [disabled]="form.invalid" >Submeter dados</button>
+
+</form>

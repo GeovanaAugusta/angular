@@ -41,7 +41,8 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 <!-- <br> -->
 
 <!-- <app-food-list></app-food-list> -->
-<app-forms></app-forms>
+<!-- <app-forms></app-forms> -->
+<!-- <app-reactive-forms></app-reactive-forms> -->
   <router-outlet><router-outlet>`,
   // Evita arquivos desnecessários
   // templateUrl: './app.component.html',
