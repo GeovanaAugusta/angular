@@ -1,4 +1,4 @@
-# Iniciando os aprendizados em Angular
+# Avançando nos aprendizados em Angular
 
 No projeto é utilizado [Angular CLI](https://github.com/angular/angular-cli) versão 15.1.1.
 
