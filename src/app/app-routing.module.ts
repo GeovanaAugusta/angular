@@ -19,6 +19,9 @@ const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
 // Rota filha
 { path: 'sobre', component: SobreComponent, children: [{path: ':id/:username', component: SobreComponent}] },
+
+{ path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+
 { path: '404', component: NotFoundComponent },
 // Para não quebrar quando entra numa rota inexistente, redirecionando assim para a 404 que renderiza meu componente de not fount
 { path: '**', redirectTo: '404' },
@@ -29,3 +32,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
