@@ -39,7 +39,7 @@ import { MenuComponent } from './shared/menu/menu.component';
     HomeComponent,
     SobreComponent,
     NotFoundComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
