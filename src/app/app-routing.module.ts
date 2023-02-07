@@ -8,6 +8,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { AccountComponent } from './shared/account/account.component';
 import { CanActiveGuard } from './shared/guards/can-active.guard';
+import { CanDeactiveGuard } from './shared/guards/can-deactive.guard';
 
 // const routes: Routes = [{
 //   path: '',
@@ -20,7 +21,7 @@ import { CanActiveGuard } from './shared/guards/can-active.guard';
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
 // Várias validações podem ser feitas no canActivate, motivo de ser usado o []
-{ path: 'account', component: AccountComponent, pathMatch: 'full', canActivate: [CanActiveGuard] },
+{ path: 'account', component: AccountComponent, pathMatch: 'full', canActivate: [CanActiveGuard], canDeactivate: [CanDeactiveGuard] },
 // Rota filha
 { path: 'sobre', component: SobreComponent, children: [{path: ':id/:username', component: SobreComponent}] },
 
