@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { AccountComponent } from './shared/account/account.component';
+import { CanActiveGuard } from './shared/guards/can-active.guard';
 
 // const routes: Routes = [{
 //   path: '',
@@ -17,6 +19,8 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
+// Várias validações podem ser feitas no canActivate, motivo de ser usado o []
+{ path: 'account', component: AccountComponent, pathMatch: 'full', canActivate: [CanActiveGuard] },
 // Rota filha
 { path: 'sobre', component: SobreComponent, children: [{path: ':id/:username', component: SobreComponent}] },
 

@@ -9,6 +9,7 @@ import { OutputComponent } from './output/output.component';
 import { FoodListComponent } from './food-list/food-list.component';
 import { FoodAddComponent } from './food-add/food-add.component';
 import { FormsModule } from '@angular/forms';
+import { AccountComponent } from './account/account.component';
 // import { MenuComponent } from './menu/menu.component';
 
 
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     OutputComponent,
     FoodListComponent,
     FoodAddComponent,
+    AccountComponent,
     // MenuComponent
   ],
   exports: [
