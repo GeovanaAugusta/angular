@@ -1,2 +1,8 @@
-<a routerLink="account" [queryParams]="{account: 'admin', password: '1234'}">Account</a>
+<a routerLink="account" [queryParams]="{account: 'admin', password: '1234'}">Account True</a>
+<a routerLink="account" [queryParams]="{account: 'admin', password: '125'}">Account False</a>
+
+<!-- Quando se pensa num array com login -->
+<!-- <a *ngIf="validateLogin(account, password)" routerLink="account" [queryParams]="{account: account, password: password}">Account True</a> -->
+<!-- <a *ngIf="!validateLogin(account, password)" routerLink="account" [queryParams]="{account: account, password: password}">Account False</a> -->
+
 <h1>Home</h1>
