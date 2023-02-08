@@ -8,12 +8,7 @@ import { AccountComponent } from '../account/account.component';
 @Injectable({
   providedIn: 'root'
 })
-export class CanDeactiveGuard implements CanActivate, CanDeactivate<AccountComponent> {
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
-  }
+export class CanDeactiveGuard implements CanDeactivate<AccountComponent> {
   canDeactivate(
     component: AccountComponent,
     currentRoute: ActivatedRouteSnapshot,
